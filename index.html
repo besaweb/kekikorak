@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="cs" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KEKI & KORAK | Most mezi Koreou a Evropou</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        korea: {
+                            blue: '#0047A0',
+                            red: '#CD2E3A',
+                            dark: '#0F172A',
+                            light: '#F8FAFC'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Ikony -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #0047A0 100%);
+        }
+        .hero-bg {
+            background-image: linear-gradient(135deg, rgba(15,23,42,0.45) 0%, rgba(0,71,160,0.30) 100%), url('most.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-6px);
+        }
+        .img-zoom {
+            transition: transform 0.5s ease;
+        }
+        .group:hover .img-zoom {
+            transform: scale(1.07);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased flex flex-col min-h-screen">
+
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="#uvod" class="flex items-center space-x-3 group">
+                    <div class="rounded-lg overflow-hidden shrink-0">
+                        <img src="kekikoraklogosmall.jpg" 
+                             alt="KEKI & KORAK logo" 
+                             class="max-h-14 w-auto"
+                             onerror="this.onerror=null; this.src='https://placehold.co/80x80/0047A0/FFF?text=KK';" />
+                    </div>
+                    <div>
+                        <span class="text-xl font-bold tracking-tight text-slate-900 block leading-tight">KEKI <span class="text-korea-red">&</span> KORAK</span>
+                        <span class="text-xs text-slate-500 font-medium">Korea & Europe Institute</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigace -->
+                <nav class="hidden md:flex space-x-8 text-base lg:text-lg font-bold text-slate-700">
+                    <a href="#uvod" class="hover:text-korea-blue transition-colors py-2">Úvod</a>
+                    <a href="#organizace" class="hover:text-korea-blue transition-colors py-2">Organizace</a>
+                    <a href="#o-nas" class="hover:text-korea-blue transition-colors py-2">O nás</a>
+                    <a href="#cinnost" class="hover:text-korea-blue transition-colors py-2">Činnost</a>
+                    <a href="#kontakt" class="hover:text-korea-blue transition-colors py-2">Kontakt</a>
+                </nav>
+
+                <!-- Tlačítko rychlého kontaktu -->
+                <div class="hidden md:flex items-center">
+                    <a href="#kontakt" class="bg-korea-blue hover:bg-blue-800 text-white text-sm font-semibold px-5 py-2.5 rounded-full shadow-md hover:shadow-lg transition-all">
+                        Napište nám
+                    </a>
+                </div>
+
+                <!-- Mobilní menu tlačítko -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-slate-900 focus:outline-none p-2" aria-label="Otevřít menu">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobilní menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3">
+            <a href="#uvod" class="mobile-link block px-3 py-2 rounded-md text-lg font-semibold text-slate-700 hover:bg-slate-100">Úvod</a>
+            <a href="#organizace" class="mobile-link block px-3 py-2 rounded-md text-lg font-semibold text-slate-700 hover:bg-slate-100">Organizace</a>
+            <a href="#o-nas" class="mobile-link block px-3 py-2 rounded-md text-lg font-semibold text-slate-700 hover:bg-slate-100">O nás</a>
+            <a href="#cinnost" class="mobile-link block px-3 py-2 rounded-md text-lg font-semibold text-slate-700 hover:bg-slate-100">Činnost</a>
+            <a href="#kontakt" class="mobile-link block px-3 py-2 rounded-md text-lg font-semibold text-slate-700 hover:bg-slate-100">Kontakt</a>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <section id="uvod" class="relative hero-bg text-white py-12 lg:py-[4.5rem] overflow-hidden">
+            <div class="absolute inset-0 opacity-15 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:20px_20px]"></div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <!-- Hero Text -->
+                <div class="max-w-3xl">
+                    <div class="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md px-3.5 py-1.5 rounded-full text-xs font-semibold text-blue-200 mb-6 border border-white/15">
+                        <span class="w-2 h-2 rounded-full bg-korea-red animate-pulse"></span>
+                        <span>KEKI & KORAK • Korea & Europe Institute</span>
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight mb-6" style="text-shadow: 0 2px 12px rgba(0,0,0,0.5);">
+                        Most mezi Koreou<br>a Evropou
+                    </h1>
+                    <p class="text-lg sm:text-xl text-slate-200 leading-relaxed mb-8" style="text-shadow: 0 1px 8px rgba(0,0,0,0.5);">
+                        <strong>Propojujeme jihokorejskou technologickou excelenci s potenciálem středoevropské mládeže, tržními příležitostmi a digitálním vzděláváním.</strong>
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#organizace" class="bg-korea-red hover:bg-red-700 text-white font-semibold px-6 py-3.5 rounded-xl shadow-lg hover:shadow-xl transition-all">
+                            <span>Naše organizace</span>
+                        </a>
+                        <a href="#o-nas" class="bg-korea-red hover:bg-red-700 text-white font-semibold px-6 py-3.5 rounded-xl shadow-lg hover:shadow-xl transition-all">
+                            Náš příběh
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="organizace" class="py-10 bg-slate-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs font-bold text-korea-blue tracking-widest uppercase mb-2">Naše instituce</h2>
+                    <p class="text-3xl font-bold text-slate-900 sm:text-4xl">Dvě křídla naší spolupráce</p>
+                    <div class="w-16 h-1 bg-korea-red mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+                    <!-- KEKI karta -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 card-hover flex flex-col justify-between group">
+                        <div>
+                            <div class="relative h-48 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1763298448528-bcdbcd972aff?q=80&w=800&auto=format&fit=crop" 
+                                     alt="Inovace mezi Koreou a Evropou" 
+                                     class="w-full h-full object-cover img-zoom"
+                                     onerror="this.onerror=null; this.src='https://placehold.co/800x400/0047A0/FFF?text=KEKI+Inovace';" />
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+                                <div class="absolute top-4 left-4 right-4 flex justify-between items-center">
+                                    <span class="text-2xl font-black text-white tracking-wider drop-shadow-md">KEKI</span>
+                                    <span class="bg-white/90 text-korea-blue text-xs font-bold px-3 py-1 rounded-full shadow border border-blue-100">
+                                        Založen 2006
+                                    </span>
+                                </div>
+                                <div class="absolute bottom-3 left-4 text-white text-xs font-medium flex items-center space-x-1.5">
+                                    <i class="fa-solid fa-city text-blue-300"></i>
+                                    <span>Technologický transfer & obchod</span>
+                                </div>
+                            </div>
+
+                            <div class="p-8">
+                                <h3 class="text-xl font-bold text-slate-900 mb-3">Znalosti a inovace mezi Koreou a Evropou</h3>
+                                <blockquote class="italic text-slate-600 border-l-4 border-korea-blue pl-4 py-1 mb-6 text-sm bg-slate-50 rounded-r">
+                                    „Urychlujeme růst, obchodní expanzi a transfer technologií mezi Jižní Koreou a Evropskou unií.“
+                                </blockquote>
+
+                                <div class="space-y-4">
+                                    <div class="flex items-start space-x-3">
+                                        <div class="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center text-korea-blue shrink-0 mt-1">
+                                            <i class="fa-solid fa-chart-line text-sm"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-bold text-slate-900 text-sm">Inovace a Obchod</h4>
+                                            <p class="text-slate-600 text-xs sm:text-sm mt-0.5">Strategický networking a přemosťování propasti mezi asijskými technologickými lídry a evropským průmyslem.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start space-x-3">
+                                        <div class="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center text-korea-blue shrink-0 mt-1">
+                                            <i class="fa-solid fa-shield-halved text-sm"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-bold text-slate-900 text-sm">Ověřená důvěra</h4>
+                                            <p class="text-slate-600 text-xs sm:text-sm mt-0.5">Postaveno na desetiletích úspěšných a spolehlivých přeshraničních obchodních vztazích.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- KORAK karta -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 card-hover flex flex-col justify-between group">
+                        <div>
+                            <div class="relative h-48 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800&auto=format&fit=crop" 
+                                     alt="Studenti a vzdělávání KORAK" 
+                                     class="w-full h-full object-cover img-zoom"
+                                     onerror="this.onerror=null; this.src='https://placehold.co/800x400/CD2E3A/FFF?text=KORAK+Akademie';" />
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+                                <div class="absolute top-4 left-4 right-4 flex justify-between items-center">
+                                    <span class="text-2xl font-black text-white tracking-wider drop-shadow-md">KORAK</span>
+                                    <span class="bg-white/90 text-korea-red text-xs font-bold px-3 py-1 rounded-full shadow border border-red-100">
+                                        Založen 2013
+                                    </span>
+                                </div>
+                                <div class="absolute bottom-3 left-4 text-white text-xs font-medium flex items-center space-x-1.5">
+                                    <i class="fa-solid fa-graduation-cap text-red-300"></i>
+                                    <span>Digitální vzdělávání & Mládež</span>
+                                </div>
+                            </div>
+
+                            <div class="p-8">
+                                <h3 class="text-xl font-bold text-slate-900 mb-3">Korejská akademie ve střední Evropě</h3>
+                                <blockquote class="italic text-slate-600 border-l-4 border-korea-red pl-4 py-1 mb-6 text-sm bg-slate-50 rounded-r">
+                                    „Vzdělávací centrum pro digitální obsah a posílení mládeže.“
+                                </blockquote>
+
+                                <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                                    KORAK se zaměřuje na rozvoj mladých talentů, vzdělávání v oblasti digitálního obsahu a podporu kulturně-akademické výměny mezi korejským a středoevropským prostředím.
+                                </p>
+
+                                <div class="flex items-center space-x-3 bg-slate-50 p-4 rounded-xl border border-slate-100">
+                                    <div class="w-8 h-8 rounded-lg bg-red-50 flex items-center justify-center text-korea-red shrink-0">
+                                        <i class="fa-solid fa-laptop-code text-sm"></i>
+                                    </div>
+                                    <span class="text-xs sm:text-sm font-semibold text-slate-700">Akademický a kulturní rozvoj talentů</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="o-nas" class="py-10 bg-white border-t border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-5">
+                        <span class="text-xs font-bold text-korea-blue tracking-widest uppercase mb-2 block">Historie a Současnost</span>
+                        <h2 class="text-3xl font-bold text-slate-900 sm:text-4xl mb-6">O nás & Naše Poslání</h2>
+                        <p class="text-slate-600 text-base leading-relaxed mb-6">
+                            Institut byl neoficiálně založen již v roce 1990 v Bratislavě za osobní účasti korejského velvyslance z Vídně. Jak se vztahy mezi Československem (a později Českem) a Koreou rozšiřovaly, byl institut oficiálně vládně registrován v roce 2006.
+                        </p>
+                        <div class="bg-blue-50 border-l-4 border-korea-blue p-5 rounded-r-xl mb-6">
+                            <h3 class="font-bold text-korea-blue text-sm uppercase mb-1">Naše Vize</h3>
+                            <p class="text-slate-700 font-medium text-sm">
+                                Institut bude klíčovým a pevným mostem, který spojuje Jižní Koreu a Českou republiku v oblastech obchodu, inovací a vzdělávání.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-7 grid sm:grid-cols-2 gap-6">
+                        <!-- Strategické Cíle -->
+                        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                            <div class="w-10 h-10 rounded-xl bg-korea-blue text-white flex items-center justify-center mb-4 text-lg">
+                                <i class="fa-solid fa-bullseye"></i>
+                            </div>
+                            <h3 class="font-bold text-slate-900 text-lg mb-2">Strategické Cíle</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Naším hlavním cílem je rozšiřovat mezi občany povědomí o Koreji a jejím technologickém a kulturním potenciálu. Tento cíl je zvláště aktuální nyní v souvislosti s výstavbou jaderné elektrárny Dukovany, kde korejské technologie hrají významnou roli.
+                            </p>
+                        </div>
+
+                        <!-- Spolupráce -->
+                        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                            <div class="w-10 h-10 rounded-xl bg-korea-red text-white flex items-center justify-center mb-4 text-lg">
+                                <i class="fa-solid fa-handshake"></i>
+                            </div>
+                            <h3 class="font-bold text-slate-900 text-lg mb-2">Mezinárodní Spolupráce</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Aktivně spolupracujeme s univerzitami, ekonomickými institucemi a vládními orgány v Asii i Evropě pro budování silných přeshraničních partnerství.
+                            </p>
+                        </div>
+
+                        <!-- Vizuální karta v sekci O nás -->
+                        <div class="sm:col-span-2 relative rounded-2xl overflow-hidden shadow-md h-48 border border-slate-200 group">
+                            <img src="https://images.unsplash.com/photo-1581091212991-8891c7d4bd9b?q=80&w=1200&auto=format&fit=crop" 
+                                 alt="Propojení korejských technologií a českého průmyslu" 
+                                 class="w-full h-full object-cover img-zoom brightness-110"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/1000x400/0F172A/FFF?text=Technologie+a+Prumysl';" />
+                            <div class="absolute inset-0 bg-gradient-to-r from-slate-900/70 via-slate-900/35 to-transparent flex items-center p-6">
+                                <div class="max-w-md text-white">
+                                    <span class="text-xs font-bold text-blue-300 uppercase tracking-wider block mb-1">Strategické partnerství</span>
+                                    <h4 class="text-lg font-bold">Propojení korejských technologií a českého průmyslu</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="cinnost" class="py-10 bg-slate-50 border-t border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs font-bold text-korea-blue tracking-widest uppercase mb-2">Co nabízíme a vytváříme</h2>
+                    <p class="text-3xl font-bold text-slate-900 sm:text-4xl">Naše činnost</p>
+                    <p class="text-slate-600 mt-3 text-base">Podporujeme široké spektrum projektů od vzdělávání po expertní analýzy.</p>
+                    <div class="w-16 h-1 bg-korea-red mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Activity 1 -->
+                    <div class="bg-white rounded-2xl border border-slate-200 shadow-sm card-hover overflow-hidden group">
+                        <div class="h-40 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=600&auto=format&fit=crop" 
+                                 alt="Učebnice a knihy" 
+                                 class="w-full h-full object-cover img-zoom"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/600x300/0047A0/FFF?text=Ucebnice';" />
+                            <div class="absolute top-3 left-3 bg-white/90 p-2 rounded-xl text-korea-blue shadow">
+                                <i class="fa-solid fa-book font-bold text-lg"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-slate-900 text-lg mb-2">Učebnice korejštiny</h3>
+                            <p class="text-slate-600 text-sm">Tvorba a vydávání moderních studijních materiálů přizpůsobených pro středoevropské studenty.</p>
+                        </div>
+                    </div>
+
+                    <!-- Activity 2 -->
+                    <div class="bg-white rounded-2xl border border-slate-200 shadow-sm card-hover overflow-hidden group">
+                        <div class="h-40 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=600&auto=format&fit=crop" 
+                                 alt="Výuka korejského jazyka" 
+                                 class="w-full h-full object-cover img-zoom"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/600x300/CD2E3A/FFF?text=Vyuka';" />
+                            <div class="absolute top-3 left-3 bg-white/90 p-2 rounded-xl text-korea-red shadow">
+                                <i class="fa-solid fa-chalkboard-user text-lg"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-slate-900 text-lg mb-2">Výuka korejštiny</h3>
+                            <p class="text-slate-600 text-sm">Kvalitní a systematická výuka korejského jazyka pro začátečníky i pokročilé zájemce.</p>
+                        </div>
+                    </div>
+
+                    <!-- Activity 3 -->
+                    <div class="bg-white rounded-2xl border border-slate-200 shadow-sm card-hover overflow-hidden group">
+                        <div class="h-40 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=600&auto=format&fit=crop" 
+                                 alt="Studentské výměny a pobyty" 
+                                 class="w-full h-full object-cover img-zoom"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/600x300/0047A0/FFF?text=Vymeny';" />
+                            <div class="absolute top-3 left-3 bg-white/90 p-2 rounded-xl text-korea-blue shadow">
+                                <i class="fa-solid fa-user-graduate text-lg"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-slate-900 text-lg mb-2">Studentské výměny</h3>
+                            <p class="text-slate-600 text-sm">Organizace a podpora mezinárodních akademických pobytů rozvíjejících potenciál mládeže.</p>
+                        </div>
+                    </div>
+
+                    <!-- Activity 4 -->
+                    <div class="bg-white rounded-2xl border border-slate-200 shadow-sm card-hover overflow-hidden group">
+                        <div class="h-40 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600&auto=format&fit=crop" 
+                                 alt="Analýzy trhu a datové vhledy" 
+                                 class="w-full h-full object-cover img-zoom"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/600x300/CD2E3A/FFF?text=Analyzy';" />
+                            <div class="absolute top-3 left-3 bg-white/90 p-2 rounded-xl text-korea-red shadow">
+                                <i class="fa-solid fa-magnifying-glass-chart text-lg"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-slate-900 text-lg mb-2">Analýzy trhu</h3>
+                            <p class="text-slate-600 text-sm">Poskytování expertních vhledů a datových analýz pro úspěšný obchod a technologický transfer.</p>
+                        </div>
+                    </div>
+
+                    <!-- Activity 5 -->
+                    <div class="bg-white rounded-2xl border border-slate-200 shadow-sm card-hover overflow-hidden group">
+                        <div class="h-40 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=600&auto=format&fit=crop" 
+                                 alt="Články a publikace" 
+                                 class="w-full h-full object-cover img-zoom"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/600x300/0047A0/FFF?text=Publikace';" />
+                            <div class="absolute top-3 left-3 bg-white/90 p-2 rounded-xl text-korea-blue shadow">
+                                <i class="fa-solid fa-newspaper text-lg"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-slate-900 text-lg mb-2">Články a publikace</h3>
+                            <p class="text-slate-600 text-sm">Pravidelné vydávání odborných a popularizačních textů o korejské ekonomice, kultuře a inovacích.</p>
+                        </div>
+                    </div>
+
+                    <!-- Activity 6 -->
+                    <div class="bg-white rounded-2xl border border-slate-200 shadow-sm card-hover overflow-hidden group">
+                        <div class="h-40 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=600&auto=format&fit=crop" 
+                                 alt="Rozhovory s experty" 
+                                 class="w-full h-full object-cover img-zoom"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/600x300/CD2E3A/FFF?text=Rozhovory';" />
+                            <div class="absolute top-3 left-3 bg-white/90 p-2 rounded-xl text-korea-red shadow">
+                                <i class="fa-solid fa-comments text-lg"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-slate-900 text-lg mb-2">Rozhovory</h3>
+                            <p class="text-slate-600 text-sm">Zprostředkování názorů klíčových osobností ze světa korejsko-evropských vztahů.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="kontakt" class="py-10 bg-slate-50 border-t border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-2xl mx-auto text-center">
+                    <span class="text-xs font-bold text-korea-blue tracking-widest uppercase mb-2 block">Vedení a Kontakt</span>
+                    <h2 class="text-3xl font-bold text-slate-900 sm:text-4xl mb-6">Spojte se s námi</h2>
+                    <p class="text-slate-600 mb-8 text-base">Máte zájem o spolupráci, studium nebo potřebujete expertní konzultaci?</p>
+
+                    <!-- Zakladatel Card -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex items-start space-x-4 text-left">
+                        <div class="w-24 h-24 rounded-full overflow-hidden shrink-0 border border-slate-300 bg-slate-200 group">
+                            <img src="antonuhnak.png" 
+                                 alt="Ing. Anton Uhnák, Dr.h.c." 
+                                 class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                                 onerror="this.onerror=null; this.parentElement.innerHTML='<div class=&quot;w-full h-full flex items-center justify-center text-slate-600 text-xl font-bold&quot;>AU</div>';" />
+                        </div>
+                        <div>
+                            <span class="text-xs font-bold text-slate-500 uppercase tracking-wider block mb-1">Director a zakladatel</span>
+                            <h3 class="text-xl font-bold text-slate-900 mb-1">Ing. Anton Uhnák, Dr.h.c.</h3>
+                            <div class="flex flex-col items-start gap-1 mt-1">
+                                <a href="tel:+420603527579" class="inline-flex items-center space-x-2 text-slate-600 hover:text-korea-blue font-semibold text-sm transition-colors">
+                                    <i class="fa-solid fa-phone"></i>
+                                    <span>+420 603 527 579</span>
+                                </a>
+                                <a href="mailto:info@keki-korak.eu" class="inline-flex items-center space-x-2 text-korea-blue hover:text-blue-800 font-semibold text-sm transition-colors">
+                                    <i class="fa-solid fa-envelope"></i>
+                                    <span>info@keki-korak.eu</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+                <div>
+                    <span class="text-white font-extrabold text-xl tracking-tight block">KEKI & KORAK</span>
+                    <p class="text-xs text-slate-400 mt-1">Most mezi Koreou a Evropou. Propojujeme excelenci s potenciálem od roku 1990.</p>
+                </div>
+                <div class="flex space-x-6 text-xs text-slate-400">
+                    <a href="#" class="hover:text-white transition-colors">Ochrana soukromí</a>
+                    <span>•</span>
+                    <a href="#" class="hover:text-white transition-colors">Podmínky použití</a>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 mt-8 pt-8 text-center text-xs text-slate-500">
+                © 2026 KEKI & KORAK. Všechna práva vyhrazena.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobilní menu toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
